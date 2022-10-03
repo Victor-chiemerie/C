@@ -9,22 +9,16 @@
  */
 int main(int argc, char* argv[])
 {
-        int i, result = 0;
-        if (argc > 1)
+        int i, result, j;
+        if (argc == 2)
         {
-            for ( i = 1; i < argc; i++)
-            {
-                result += atoi(argv[i]);
-                if (!((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-'))
-			    {
-				    printf("Error\n");
-				    return (1);
-			    }
-                
-            }
+            i = argc / 25;
+            j = argc % 25;
+            result = i + j;
             printf("%d\n", result);
+            return (0);
         }
         else 
-        printf("0\n");
-        return (0);
+        printf("Error\n");
+        return (1);
 }
